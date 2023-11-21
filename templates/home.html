@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Mental Health Web App</h1>
+    <p>Hello, {{ current_user.email }}!</p>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    <h2>Journal Entries</h2>
+    {% for post in posts %}
+        <p>{{ post.content }} - {{ post.date_posted }}</p>
+    {% endfor %}
+    <h2>Dashboard</h2>
+    <!-- Add data visualization components here -->
+    <p><a href="{{ url_for('journal') }}">Create a new journal entry</a></p>
+</body>
+</html>
+
