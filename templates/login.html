@@ -3,24 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="COMP 2800 - Better-Together-"
+    <title>Better-Together- App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
 
-    <title>Better-Together - Login</title>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
+        h1, h2 {
+            color: #333;
+        }
 
+        p {
+            margin-bottom: 10px;
+        }
+
+        .dashboard {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mood-chart {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .journal-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .logout-link {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="POST" action="{{ url_for('login') }}">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        <br>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-</body>
+    <header>
+        <h1>Better-Together- App</h1>
+    </header>
 
+    <div class="dashboard">
+        <p>Hello, {{ current_user.email }}!</p>
+        <h2>Journal Entries</h2>
+        {% for post in posts %}
+            <p>{{ post.content }} - {{ post.date_posted }}</p>
+        {% endfor %}
+
+        <h2>Dashboard</h2>
+        <div class="mood-chart">
+            <!-- Add data visualization components here (e.g., charts or graphs) -->
+            <!-- For simplicity, you can use placeholder text or images -->
+            <p>Data Visualization Placeholder</p>
+        </div>
+
+        <a href="{{ url_for('journal') }}" class="journal-link">Create a new journal entry</a>
+        <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+    </div>
+</body>
 </html>
+
 
