@@ -1,12 +1,17 @@
 
 # Better Together
 
-A web application that aims to deliver essential  features to user for mental health tracking and community support 
+A web application that aims to deliver essential  features to user for mental health tracking and community support, in other words it create a user-friendly nd accessible platform that promotes mental well-being, llows users to track their mental health, and provides a supportive community
 
 
 ## Authors
 
 - [@Khanyisa Qolo](https://www.github.com/Khanyicou
+
+## Tech Used
+Python (Flask)
+Javascript
+HTML, CSS
 
 
 ## Badges
